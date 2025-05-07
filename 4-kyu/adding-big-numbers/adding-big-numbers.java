@@ -3,7 +3,6 @@ import org.apache.commons.lang3.StringUtils;
 public class Kata {
 ​
   public static String add(String a, String b) {
-​
     // Handle null or empty input strings
     if (StringUtils.isBlank(a))
         return b;
@@ -15,8 +14,8 @@ public class Kata {
         char[] digits1 = a.toCharArray();
         char[] digits2 = b.toCharArray();
 ​
-        int i = digits1.length - 1; // Pointer for num1
-        int j = digits2.length - 1; // Pointer for num2
+        int i = digits1.length - 1; // Pointer for a
+        int j = digits2.length - 1; // Pointer for b
         int carry = 0;
         StringBuilder result = new StringBuilder();
 ​
@@ -29,8 +28,8 @@ public class Kata {
             result.append(sum % 10); // Append the current digit to the result
             carry = sum / 10;          // Calculate the carry for the next position
 ​
-            i--; // Move to the next digit in num1
-            j--; // Move to the next digit in num2
+            i--; // Move to the next digit in a
+            j--; // Move to the next digit in b
         }
 ​
         // The result is built in reverse order (least significant digit first)
